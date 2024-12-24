@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 邦尼部落格</title>
-    <link>https://chichibonbon.github.io/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on 邦尼部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Tue, 24 Dec 2024 12:24:47 +0800</lastBuildDate>
-    <atom:link href="https://chichibonbon.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>學習技巧</title>
-      <link>https://chichibonbon.github.io/categories/%E5%AD%B8%E7%BF%92%E6%8A%80%E5%B7%A7/</link>
+      <link>http://localhost:1313/categories/%E5%AD%B8%E7%BF%92%E6%8A%80%E5%B7%A7/</link>
       <pubDate>Tue, 24 Dec 2024 12:24:47 +0800</pubDate>
-      <guid>https://chichibonbon.github.io/categories/%E5%AD%B8%E7%BF%92%E6%8A%80%E5%B7%A7/</guid>
+      <guid>http://localhost:1313/categories/%E5%AD%B8%E7%BF%92%E6%8A%80%E5%B7%A7/</guid>
       <description></description>
     </item>
     <item>
       <title>Go Language</title>
-      <link>https://chichibonbon.github.io/categories/go-language/</link>
+      <link>http://localhost:1313/categories/go-language/</link>
       <pubDate>Mon, 23 Dec 2024 10:07:47 +0600</pubDate>
-      <guid>https://chichibonbon.github.io/categories/go-language/</guid>
+      <guid>http://localhost:1313/categories/go-language/</guid>
       <description></description>
     </item>
   </channel>
