@@ -2,55 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/blog/</loc>
+    <loc>https://chichibonbon.github.io/blog/</loc>
     <lastmod>2024-12-24T12:24:47+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://chichibonbon.github.io/categories/</loc>
     <lastmod>2024-12-24T12:24:47+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/markdown/</loc>
+    <loc>https://chichibonbon.github.io/tags/japan/</loc>
     <lastmod>2024-12-24T12:24:47+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://chichibonbon.github.io/tags/markdown/</loc>
     <lastmod>2024-12-24T12:24:47+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E5%AD%B8%E7%BF%92%E6%8A%80%E5%B7%A7/</loc>
+    <loc>https://chichibonbon.github.io/tags/</loc>
     <lastmod>2024-12-24T12:24:47+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/markdownintro/</loc>
+    <loc>https://chichibonbon.github.io/blog/hokkaido-traveling/</loc>
     <lastmod>2024-12-24T12:24:47+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://chichibonbon.github.io/categories/%E5%AD%B8%E7%BF%92%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2024-12-24T12:24:47+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/game/</loc>
+    <loc>https://chichibonbon.github.io/categories/%E8%87%AA%E7%94%B1%E6%97%85%E8%A1%8C/</loc>
+    <lastmod>2024-12-24T12:24:47+08:00</lastmod>
+  </url><url>
+    <loc>https://chichibonbon.github.io/blog/markdownintro/</loc>
+    <lastmod>2024-12-24T12:24:47+08:00</lastmod>
+  </url><url>
+    <loc>https://chichibonbon.github.io/</loc>
+    <lastmod>2024-12-24T12:24:47+08:00</lastmod>
+  </url><url>
+    <loc>https://chichibonbon.github.io/tags/game/</loc>
     <lastmod>2024-12-23T10:07:47+06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/go-language/</loc>
+    <loc>https://chichibonbon.github.io/categories/go-language/</loc>
     <lastmod>2024-12-23T10:07:47+06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/post-13/</loc>
+    <loc>https://chichibonbon.github.io/blog/post-13/</loc>
     <lastmod>2024-12-23T10:07:47+06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/html/</loc>
+    <loc>https://chichibonbon.github.io/tags/html/</loc>
     <lastmod>2024-12-23T10:07:47+06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/new/</loc>
+    <loc>https://chichibonbon.github.io/tags/new/</loc>
     <lastmod>2024-12-23T10:07:47+06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/photos/</loc>
+    <loc>https://chichibonbon.github.io/tags/photos/</loc>
     <lastmod>2024-12-23T10:07:47+06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
+    <loc>https://chichibonbon.github.io/tags/python/</loc>
     <lastmod>2024-12-23T10:07:47+06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://chichibonbon.github.io/about/</loc>
     <lastmod>2019-10-29T13:49:23+06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/contact/</loc>
+    <loc>https://chichibonbon.github.io/contact/</loc>
     <lastmod>2019-10-29T13:49:23+06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://chichibonbon.github.io/search/</loc>
     <lastmod>2019-10-29T13:49:23+06:00</lastmod>
   </url>
 </urlset>
