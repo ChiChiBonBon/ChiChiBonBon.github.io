@@ -116,7 +116,7 @@
           <span>By 邦尼</span>
           
           <span class="border-bottom border-primary px-2 mx-1"></span>
-          <span>09 January 2024</span>
+          <span>15 January 2024</span>
           
         </div>
         
@@ -124,7 +124,70 @@
         
         <div class="content mb-5">
           <h1 id="如何使用docker">如何使用Docker</h1>
-
+<h2 id="docker的安裝">Docker的安裝</h2>
+<ol>
+<li>查看當前Linux版本</li>
+</ol>
+<pre tabindex="0"><code>cat /etc/os-release
+</code></pre><ol start="2">
+<li>清除CLI的畫面</li>
+</ol>
+<pre tabindex="0"><code>clear
+</code></pre><ol start="3">
+<li>更新系統套件索引並安裝必要的依賴項</li>
+</ol>
+<pre tabindex="0"><code>sudo apt update
+sudo apt install apt-transport-https ca-certificates curl gnupg
+</code></pre><ol start="4">
+<li>添加Docker的官方GPG密鑰</li>
+</ol>
+<pre tabindex="0"><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker.gpg
+</code></pre><ol start="5">
+<li>將Docker的官方存儲庫添加到系統</li>
+</ol>
+<pre tabindex="0"><code>echo &#34;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu noble stable&#34; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</code></pre><ol start="6">
+<li>更新套件索引並安裝Docker</li>
+</ol>
+<pre tabindex="0"><code>sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+</code></pre><ol start="7">
+<li>驗證Docker是否安裝成功</li>
+</ol>
+<pre tabindex="0"><code>sudo systemctl is-active docker
+</code></pre><ol start="8">
+<li>查看當前docker版本</li>
+</ol>
+<pre tabindex="0"><code>sudo docker --version
+</code></pre><ol start="9">
+<li>啟動特定的服務</li>
+</ol>
+<pre tabindex="0"><code>sudo service docker start
+</code></pre><ol start="10">
+<li>查看本地docker images</li>
+</ol>
+<pre tabindex="0"><code>sudo docker images
+</code></pre><ol start="11">
+<li>抓取docker image 名叫hello-world</li>
+</ol>
+<pre tabindex="0"><code>sudo docker pull hello-world
+</code></pre><ol start="12">
+<li>再次查看本地docker images</li>
+</ol>
+<pre tabindex="0"><code>sudo docker images
+</code></pre><ol start="13">
+<li>啟動dokcer image 名叫hello-world</li>
+</ol>
+<pre tabindex="0"><code>sudo docker run hello-world
+</code></pre><ol start="14">
+<li>關掉docker engine</li>
+</ol>
+<pre tabindex="0"><code>sudo service docker stop
+</code></pre><ol start="15">
+<li>允許非root用戶運行Docker命令</li>
+</ol>
+<pre tabindex="0"><code>sudo usermod -aG docker ${USER}
+</code></pre>
         </div>
 
         

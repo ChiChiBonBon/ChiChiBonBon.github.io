@@ -9,13 +9,6 @@
     <lastBuildDate>Tue, 24 Dec 2024 12:24:47 +0800</lastBuildDate>
     <atom:link href="https://chichibonbon.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>北海道紀行</title>
-      <link>https://chichibonbon.github.io/blog/hokkaido-traveling/</link>
-      <pubDate>Tue, 24 Dec 2024 12:24:47 +0800</pubDate>
-      <guid>https://chichibonbon.github.io/blog/hokkaido-traveling/</guid>
-      <description>北海道紀行 第一天 第二天 第三天 第四天 第五天 第六天 第七天 第八天 第九天 Hokkaido is awesome!</description>
-    </item>
-    <item>
       <title>邦尼的第一篇文章上線啦~Markdown用法</title>
       <link>https://chichibonbon.github.io/blog/markdownintro/</link>
       <pubDate>Tue, 24 Dec 2024 12:24:47 +0800</pubDate>
@@ -25,9 +18,9 @@
     <item>
       <title>docker學習記</title>
       <link>https://chichibonbon.github.io/blog/docker-start/</link>
-      <pubDate>Tue, 09 Jan 2024 14:53:47 +0800</pubDate>
+      <pubDate>Mon, 15 Jan 2024 15:43:47 +0800</pubDate>
       <guid>https://chichibonbon.github.io/blog/docker-start/</guid>
-      <description>如何使用Docker </description>
+      <description>如何使用Docker Docker的安裝 查看當前Linux版本 cat /etc/os-release 清除CLI的畫面 clear 更新系統套件索引並安裝必要的依賴項 sudo apt update sudo apt install apt-transport-https ca-certificates curl gnupg 添加Docker的官方GPG密鑰 curl -fsSL https://download.</description>
     </item>
   </channel>
 </rss>

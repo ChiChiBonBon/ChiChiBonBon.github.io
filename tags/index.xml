@@ -9,13 +9,6 @@
     <lastBuildDate>Tue, 24 Dec 2024 12:24:47 +0800</lastBuildDate>
     <atom:link href="https://chichibonbon.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Japan</title>
-      <link>https://chichibonbon.github.io/tags/japan/</link>
-      <pubDate>Tue, 24 Dec 2024 12:24:47 +0800</pubDate>
-      <guid>https://chichibonbon.github.io/tags/japan/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Markdown</title>
       <link>https://chichibonbon.github.io/tags/markdown/</link>
       <pubDate>Tue, 24 Dec 2024 12:24:47 +0800</pubDate>
@@ -25,7 +18,7 @@
     <item>
       <title>Docker</title>
       <link>https://chichibonbon.github.io/tags/docker/</link>
-      <pubDate>Tue, 09 Jan 2024 14:53:47 +0800</pubDate>
+      <pubDate>Mon, 15 Jan 2024 15:43:47 +0800</pubDate>
       <guid>https://chichibonbon.github.io/tags/docker/</guid>
       <description></description>
     </item>

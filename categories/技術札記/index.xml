@@ -6,14 +6,14 @@
     <description>Recent content in 技術札記 on 邦尼部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 09 Jan 2024 14:53:47 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jan 2024 15:43:47 +0800</lastBuildDate>
     <atom:link href="https://chichibonbon.github.io/categories/%E6%8A%80%E8%A1%93%E6%9C%AD%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>docker學習記</title>
       <link>https://chichibonbon.github.io/blog/docker-start/</link>
-      <pubDate>Tue, 09 Jan 2024 14:53:47 +0800</pubDate>
+      <pubDate>Mon, 15 Jan 2024 15:43:47 +0800</pubDate>
       <guid>https://chichibonbon.github.io/blog/docker-start/</guid>
-      <description>如何使用Docker </description>
+      <description>如何使用Docker Docker的安裝 查看當前Linux版本 cat /etc/os-release 清除CLI的畫面 clear 更新系統套件索引並安裝必要的依賴項 sudo apt update sudo apt install apt-transport-https ca-certificates curl gnupg 添加Docker的官方GPG密鑰 curl -fsSL https://download.</description>
     </item>
   </channel>
 </rss>
