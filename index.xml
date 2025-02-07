@@ -22,5 +22,12 @@
       <guid>https://chichibonbon.github.io/blog/docker-start/</guid>
       <description>如何使用Docker Docker的安裝 查看當前Linux版本 cat /etc/os-release 清除CLI的畫面 clear 更新系統套件索引並安裝必要的依賴項 sudo apt update sudo apt install apt-transport-https ca-certificates curl gnupg 添加Docker的官方GPG密鑰 curl -fsSL https://download.</description>
     </item>
+    <item>
+      <title>Spring IoC常用的Annotation</title>
+      <link>https://chichibonbon.github.io/blog/spring-ioc/</link>
+      <pubDate>Mon, 15 Jan 2024 15:43:47 +0800</pubDate>
+      <guid>https://chichibonbon.github.io/blog/spring-ioc/</guid>
+      <description>Spring IoC注入與Bean概念 IoC 概念 將Object的控制權交給外部Spring容器管理 Bean 被Spring容器創建的object，叫做bean Spring中的物件名稱為Bean名字class nanme的第一字母轉小寫 @Component 用法:只能加在class上 用途:將該class變成由Spring容器所管理的object @Componet public class Poodle implements dog { @Override public void bark(String message){ System.</description>
+    </item>
   </channel>
 </rss>
