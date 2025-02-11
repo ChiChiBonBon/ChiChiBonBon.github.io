@@ -197,6 +197,28 @@ public class Cat{
     fish.survive();
   }
 }
+</code></pre><h2 id="configuration">@Configuration</h2>
+<ul>
+<li>用法:寫在class上面</li>
+<li>用途:用來設定Spring容器的config</li>
+</ul>
+<pre tabindex="0"><code>@Configuration
+public class MyConfiguration{
+  //do something
+
+}
+</code></pre><h2 id="bean-1">@Bean</h2>
+<ul>
+<li>用法:寫在帶有@Configuration的class之方法上</li>
+<li>用途:用來設定Spring容器需要的Bean物件</li>
+</ul>
+<pre tabindex="0"><code>@Configuration
+public class MyConfiguration{
+  @Bean(&#34;connectSetUp&#34;)
+  public Connection conn(){
+    return new Connection();
+  }
+}
 </code></pre><h2 id="restcontroller">@RestController</h2>
 <ul>
 <li>用法:加在Class上面</li>
