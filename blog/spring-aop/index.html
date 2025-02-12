@@ -5,7 +5,7 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="邦尼的技術學習手札">
+  <meta name="description" content="如何使用Java Annotation">
   <meta name="author" content="邦尼">
     
   
@@ -103,102 +103,110 @@
 </header>
 <!-- /navigation -->
 
-
 <section class="section-sm">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 mb-5 mb-lg-0">
-        <div class="row">
-          
-          <div class="col-lg-4">
-  <div class="widgets">
-    
-    <div class="widget">
-      
-      <h4 class="widget-title">About Me</h4>
-      
-      <img src="https://chichibonbon.github.io/images/benny.jpg" alt=""
-        class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
-      
-      <p>我是邦尼
-IT邦邦忙</p>
-      <a href="https://chichibonbon.github.io/about/" class="btn btn-outline-primary">Know More</a>
-      
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Category</h4>
-      <ul class="list-unstyled">
-        <li><a
-            href="/categories/%e5%ad%b8%e7%bf%92%e6%8a%80%e5%b7%a7/">學習技巧</a>
-        </li>
-        <li><a
-            href="/categories/%e6%8a%80%e8%a1%93%e6%9c%ad%e8%a8%98/">技術札記</a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Tag</h4>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/docker/">Docker</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/java/">Java</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/markdown/">Markdown</a></li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Social</h4>
-      <ul class="list-inline social-links">
-        
-        <li class="list-inline-item"><a href="https://github.com/ChiChiBonBon"><i class="ti-github"></i></a></li>
-        
-      </ul>
-    </div>
-  </div>
-</div>
-
-          
-          
-          
-          <div class="col-md-6 mb-4">
-    <article class="card">
-        
-        <img src="https://chichibonbon.github.io/images/post/article-pic-docker.webp" class="card-img-top" alt="docker學習記">
-        
-        <div class="card-body px-0">
+      <div class="col-lg-10 mx-auto">
         
         <a href="/categories/%e6%8a%80%e8%a1%93%e6%9c%ad%e8%a8%98"
-            class="text-primary">技術札記</a>
+          class="text-primary">技術札記</a>
         
-        <a href="https://chichibonbon.github.io/blog/docker-start/" class="h5 d-block my-3">docker學習記</a>
+        <h2>Spring AOP概念</h2>
         <div class="mb-3 post-meta">
-            <span>By 邦尼</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            <span>2024-01-15</span>
-            
-        </div>
-        <p class="card-text">如何使用docker</p>
-        <a href="https://chichibonbon.github.io/blog/docker-start/" class="btn btn-outline-primary">read more</a>
-        </div>
-    </article>
-</div>
+          <span>By 邦尼</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>12 February 2025</span>
           
         </div>
-      </div>
-
-      
-      <div class="col-12 mt-5">
         
+        <img src="https://chichibonbon.github.io/images/post/article-spring-boot-pic.png" class="img-fluid w-100 mb-4" alt="Spring AOP概念">
+        
+        <div class="content mb-5">
+          <h1 id="spring-aop">Spring AOP</h1>
+<h2 id="aspect">@Aspect</h2>
+<p>用法:需與Bean一起使用，帶有@Component的class
+用途:切面導向設計，共同邏輯程式碼重用，宣告某class是切面</p>
+<pre tabindex="0"><code>@Aspect
+@Component
+public class MyAspect{
+    //to something
+}
+</code></pre><h2 id="before">Before</h2>
+<p>用法:加在@Aspect的class之方法上
+用途:在方法執行前，處理共用邏輯</p>
+<pre tabindex="0"><code>@Aspect
+@Component
+public class MyAspect{
+    @Before(&#34;excution(* com.example.demo.HpPrinter.*(..))&#34;)
+    public void before(){
+        System.out.println(&#34;Before&#34;);
+    }
+}
+</code></pre><h2 id="after">After</h2>
+<p>用法:加在@Aspect的class之方法上
+用途:在方法執行後，處理共用邏輯</p>
+<pre tabindex="0"><code>@Aspect
+@Component
+public class MyAspect{
+    @after(&#34;excution(* com.example.demo.HpPrinter.*(..))&#34;)
+    public void after(){
+        System.out.println(&#34;After&#34;);
+    }
+}
+</code></pre><h2 id="around">Around</h2>
+<p>用法:加在@Aspect的class之法上
+用途:在方法執行前、後，處理共用邏輯</p>
+<pre tabindex="0"><code>public class MyAspect{
+    @Around(&#34;execution(* com.example.demo.HpPrinter.*(..))&#34;)
+    public Object around(ProceedingJoinPoint pjp) throws Throwable{
+        Date start = new Date();
+        System.out.println(&#34;I&#39;m before&#34;);
+        Object obj = pjp.proceed();
+        Date end = new Date();
+        System.out.println(&#34;I&#39;m after&#34;);
+        long time = end.getTime() - start.getTime();
+        System.out.println(&#34;時間差:&#34; + time + &#34;ms&#34;);
+        return  obj;
+    }
+}
+</code></pre><h2 id="重點整理">重點整理</h2>
+<p><img src="/static/images/post/spring-aop-annotation.png" alt="Spring-AOP-PointCut">
+<img src="/static/images/post/spring-aop-pointcut.png" alt="Spring-AOP-Annotation"></p>
+<h1 id="spring-aop的應用">Spring AOP的應用</h1>
+<ul>
+<li>權限控管:Spring Security</li>
+<li>統一例外處理:@ControllerAdvice</li>
+<li>Log日誌記錄</li>
+</ul>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "chichibonbon" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       </div>
     </div>
   </div>
 </section>
-
 
 
 

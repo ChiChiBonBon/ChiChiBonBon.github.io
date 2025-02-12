@@ -6,12 +6,19 @@
     <description>Recent content in Java on 邦尼部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 07 Feb 2025 17:16:47 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2025 12:43:47 +0800</lastBuildDate>
     <atom:link href="https://chichibonbon.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring AOP概念</title>
+      <link>https://chichibonbon.github.io/blog/spring-aop/</link>
+      <pubDate>Wed, 12 Feb 2025 12:43:47 +0800</pubDate>
+      <guid>https://chichibonbon.github.io/blog/spring-aop/</guid>
+      <description>Spring AOP @Aspect 用法:需與Bean一起使用，帶有@Component的class 用途:切面導向設計，共同邏輯程式碼重用，宣告某class是切面&#xA;@Aspect @Component public class MyAspect{ //to something } Before 用法:加在@Aspect的class之方法上 用途:在方法執行前，處理共用邏輯</description>
+    </item>
     <item>
       <title>Spring IoC常用的Annotation</title>
       <link>https://chichibonbon.github.io/blog/spring-ioc/</link>
-      <pubDate>Fri, 07 Feb 2025 17:16:47 +0800</pubDate>
+      <pubDate>Wed, 12 Feb 2025 12:43:47 +0800</pubDate>
       <guid>https://chichibonbon.github.io/blog/spring-ioc/</guid>
       <description>Spring IoC注入與Bean概念 IoC 概念 將Object的控制權交給外部Spring容器管理 Bean 被Spring容器創建的object，叫做bean Spring中的物件名稱為Bean名字class nanme的第一字母轉小寫 @Component 用法:只能加在class上 用途:將該class變成由Spring容器所管理的object @Componet public class Poodle implements dog { @Override public void bark(String message){ System.</description>
     </item>
