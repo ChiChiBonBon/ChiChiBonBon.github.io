@@ -219,6 +219,52 @@ public class MyConfiguration{
     return new Connection();
   }
 }
+</code></pre><h2 id="postconstruct">@PostConstruct</h2>
+<ul>
+<li>用法:寫在帶有@Component的Class中或是Bean的方法上面</li>
+<li>用途:設定Bean中的實體變數的初始值</li>
+<li>要點1:1.方法要是public 2.方法的回傳要是void 3.方法名沒有硬性規定 4.方法沒有傳參</li>
+<li>要點2:擇一使用afterProperitiesSet或@PostConstruct</li>
+</ul>
+<pre tabindex="0"><code>@Component
+public class MyBean{
+  private int initValue;
+
+  @PostConstruct
+  public void setUp{
+    initValue = 5;
+  }
+
+  public int caculate(){
+    initValue--;
+
+    System.out.println(&#34;當前值:&#34; + initValue);
+    return initValue;
+  }
+}
+</code></pre><h2 id="afterproperitiesset">afterProperitiesSet</h2>
+<ul>
+<li>用法:實作InitializingBean的方法afterProperitiesSet</li>
+<li>用途:初始化Bean中的實體變數</li>
+<li>要點:擇一使用afterProperitiesSet或@PostConstruct</li>
+</ul>
+<pre tabindex="0"><code>@Component
+public class MyBean implements InitializingBean{
+  private int initiValue;
+
+  @Override
+  public void afterProperitiesSet throws Exception(){
+    initiValue = 5;
+
+    System.out.println(&#34;當前值:&#34; + initValue);
+  }
+
+  public int caculate(){
+    initValue--;
+    System.out.println(&#34;當前值:&#34; + initValue);
+    return initValue;
+  }
+}
 </code></pre><h2 id="restcontroller">@RestController</h2>
 <ul>
 <li>用法:加在Class上面</li>
@@ -236,6 +282,59 @@ public class MyController{
     System.out.println(&#34;Hello World!!&#34;);
   }
 }
+</code></pre><h2 id="bean的生命週期">Bean的生命週期</h2>
+<ol>
+<li>Bean創建生成 &ndash;&gt; Bean初始化 &ndash;&gt; Bean依賴注入(DI)</li>
+<li>Bean創建時，若有其他依賴注入的Bean沒有建立、初始化，會優先回去處理生成Bean(創建+初始化)</li>
+<li>若Spring Boot有任一Bean建立失敗，會使程式報錯</li>
+<li>不要寫出循環依賴的程式: A依賴B,B依賴A</li>
+</ol>
+<h2 id="spring-boot設定檔">Spring Boot設定檔</h2>
+<ul>
+<li>用法:使用properties語法(key=value)</li>
+<li>用途:設定Spring Boot的設定檔</li>
+</ul>
+<pre tabindex="0"><code>application.properties
+
+dbConnection=127.0.0.1:1733
+dbUser.name=Jason
+dbUser.password=P@ssW0rd
+</code></pre><h2 id="value">@value</h2>
+<ul>
+<li>用法:加在Bean中的變數或加在有@Configuration的class中之變數</li>
+<li>用途:讀取Spring Boot的設定檔</li>
+<li>要點:1.格式:${key} 2.設定檔中的值要與Java變數型態一致 3.可設定預設值:${key:default}</li>
+</ul>
+<pre tabindex="0"><code>@Configuration
+public class MyConfiguration{
+  @Value(${dbConnection})
+  private String dbConnection;
+
+  @Bean(&#34;conn&#34;)
+  public Connection conn(){
+    return new Connection
+  }
+}
+
+@Component
+public class MyBean{
+  @Value(${dbUser.name:root})
+  private String name;
+}
+</code></pre><h2 id="properties語法-vs-yml語法">properties語法 V.S yml語法</h2>
+<pre tabindex="0"><code>properties語法
+
+gender=male
+my.name=Jason
+my.phone=0912345678
+# This is comment
+</code></pre><pre tabindex="0"><code>yml語法
+
+gender=male
+my:
+  name: Jason
+  phone: 0912345678
+# This is comment
 </code></pre>
         </div>
 
