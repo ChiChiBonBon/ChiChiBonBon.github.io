@@ -6,15 +6,8 @@
     <description>Recent content in 技術札記 on 邦尼部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 07 Feb 2025 17:16:47 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jan 2024 15:43:47 +0800</lastBuildDate>
     <atom:link href="https://chichibonbon.github.io/categories/%E6%8A%80%E8%A1%93%E6%9C%AD%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Spring IoC常用的Annotation</title>
-      <link>https://chichibonbon.github.io/blog/spring-ioc/</link>
-      <pubDate>Fri, 07 Feb 2025 17:16:47 +0800</pubDate>
-      <guid>https://chichibonbon.github.io/blog/spring-ioc/</guid>
-      <description>Spring IoC注入與Bean概念 IoC 概念 將Object的控制權交給外部Spring容器管理 Bean 被Spring容器創建的object，叫做bean Spring中的物件名稱為Bean名字class nanme的第一字母轉小寫 @Component 用法:只能加在class上 用途:將該class變成由Spring容器所管理的object @Componet public class Poodle implements dog { @Override public void bark(String message){ System.</description>
-    </item>
     <item>
       <title>docker學習記</title>
       <link>https://chichibonbon.github.io/blog/docker-start/</link>
