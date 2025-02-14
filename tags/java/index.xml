@@ -6,8 +6,15 @@
     <description>Recent content in Java on 邦尼部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 12 Feb 2025 12:43:47 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Feb 2025 16:14:47 +0800</lastBuildDate>
     <atom:link href="https://chichibonbon.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring MVC常用的Annotation</title>
+      <link>https://chichibonbon.github.io/blog/spring-mvc/</link>
+      <pubDate>Fri, 14 Feb 2025 16:14:47 +0800</pubDate>
+      <guid>https://chichibonbon.github.io/blog/spring-mvc/</guid>
+      <description>HTTP協議 規定資料傳輸格式，以便前後端可溝通 區分Request和Response兩種 HTTP Request Http Method URL Request Head Request Body HTTP Response Http Status Code Response Head Response Body </description>
+    </item>
     <item>
       <title>Spring AOP概念</title>
       <link>https://chichibonbon.github.io/blog/spring-aop/</link>
