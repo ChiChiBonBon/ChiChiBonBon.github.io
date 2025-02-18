@@ -143,7 +143,51 @@
 <li>Response Body</li>
 </ul>
 <p><img src="/images/post/http-response.png" alt="alt text"></p>
-
+<h2 id="url格式">URL格式</h2>
+<ul>
+<li>http//localhost:8080/test</li>
+<li>協議(http//)</li>
+<li>域名(localhost)</li>
+<li>埠號(:8080)</li>
+<li>路徑(/test)</li>
+</ul>
+<h2 id="requestmapping">@RequestMapping</h2>
+<ul>
+<li>用法:加上class或方法上，括號中填寫域名</li>
+<li>用途:控制器導路徑，執行對應的方法</li>
+<li>要點:使用時一定要加@RestController或@Controller，括號中不包含域名</li>
+</ul>
+<pre tabindex="0"><code>@RestController
+@RequestMapping(&#34;/detail&#34;)
+public class MyController{
+  @RequestMapping(&#34;/test&#34;)
+  public String test(){
+    System.out.println(&#34;test&#34;);
+    return &#34;Sucess&#34;;
+  }
+}
+</code></pre><h2 id="controllerrestcontroller">Controller/RestController</h2>
+<ul>
+<li>用法:加在class上</li>
+<li>用途:生成控制器，可視為@Component的加強版</li>
+</ul>
+<pre tabindex="0"><code>@RestController
+public class MyController{
+  //...do something
+}
+</code></pre><h2 id="json">JSON</h2>
+<ul>
+<li>JSON是一種輕量級資料交換格式</li>
+<li>用途:結構化呈現數據</li>
+<li>Value值的類型:1. 整數 2. 浮點數 3. 字串 4.布林值</li>
+</ul>
+<pre tabindex="0"><code>{
+  &#34;Integer&#34;:10,
+  &#34;Float&#34;:99.9,
+  &#34;String&#34;:&#34;Hello&#34;,
+  &#34;Boolean&#34;:true
+}
+</code></pre>
         </div>
 
         
