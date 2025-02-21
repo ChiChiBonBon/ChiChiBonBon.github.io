@@ -187,7 +187,149 @@ public class MyController{
   &#34;String&#34;:&#34;Hello&#34;,
   &#34;Boolean&#34;:true
 }
-</code></pre>
+</code></pre><h2 id="controller和restcontroller的差別">Controller和RestController的差別</h2>
+<pre tabindex="0"><code>@Controller
+public class MyController{
+  @ResponseBody
+  @RequestMapping(&#34;/test&#34;)
+  public Ojbect test(){
+    Object obj = new object;
+    return obj;
+  }
+}
+</code></pre><pre tabindex="0"><code>@RestController
+public class MyController{
+  @RequestMapping(&#34;/test&#34;)
+  public Object test(){
+    Object obj = new object;
+    return obj;
+  }
+}
+</code></pre><h2 id="http-method">HTTP Method</h2>
+<ul>
+<li>
+<p>GET:類似明信片，傳遞的參數會被看見
+<img src="/images/post/get-method.png" alt="Get-Method"></p>
+</li>
+<li>
+<p>POST:類似信封，傳遞的參數不會被看見
+<img src="/images/post/post-method.png" alt="Post-Method"></p>
+</li>
+</ul>
+<h2 id="requestparam">@RequestParam</h2>
+<ul>
+<li>用法:只能加在參數上</li>
+<li>用途:從URL中抓取值</li>
+<li>參數設定:name、Required、defaultValue</li>
+</ul>
+<p>http://localhost:8080/test?sn=6688</p>
+<pre tabindex="0"><code>@RestController
+public class MyController{
+  @RequestMapping(&#34;/test&#34;)
+  public Integer test(@RequestParam(name=&#34;sn&#34;,defaultValue=&#34;0&#34;,Required=&#34;true&#34;) Intgeer id){
+    return id;
+  }
+}
+</code></pre><h2 id="requestbody">@RequestBody</h2>
+<ul>
+<li>用法:只能加在參數上</li>
+<li>用途:POST方法中抓取ReuestBody中的JSON, 並轉成Java Object</li>
+<li>要點:ReuestBody中多帶值，Spring Boot會忽略，RequestBody少帶值，值會是Null</li>
+</ul>
+<pre tabindex="0"><code>POST Method:http://localhost:8080/test
+
+RequestBody:
+{
+  &#34;id&#34;:123,
+  &#34;name&#34;:&#34;Jason&#34;
+}
+</code></pre><pre tabindex="0"><code>@RestController
+public class MyController{
+  @RequestMapping(&#34;/test&#34;)
+  public Student test(@RequestBody Studnet student){
+    return student;
+  }
+}
+
+public class student{
+  private Integer id;
+  private String name;
+
+  //...getter and setter
+}
+</code></pre><h2 id="requestheader">@RequestHeader</h2>
+<ul>
+<li>用法:只能加在參數上</li>
+<li>用途:取得RequestHeader的參數</li>
+<li>參數設定:name、defaultValue、Required</li>
+</ul>
+<pre tabindex="0"><code>public class MyController{
+  @RequestMapping(&#34;/test&#34;)
+  public String test(@RequestHeader(name = &#34;Content-Type&#34;,defaultValue = &#34;application/json&#34;,Required = &#34;true&#34;) String contentType){
+    System.out.println(&#34;Content-Type:&#34; + contentType);
+    return contentType;
+  }
+}
+</code></pre><p><img src="/images/post/requestHeader.png" alt="RequestHeader"></p>
+<h2 id="pathvariable">@PathVariable</h2>
+<ul>
+<li>用法:只能加在方法參數上</li>
+<li>用途:取得URL路徑中的值</li>
+</ul>
+<pre tabindex="0"><code>@RestController
+public class MyController{
+  @ReqeustMapping(&#34;/post/{id}&#34;)
+  public String post(@PathVariable Integer id){
+    System.out.println(&#34;PathVarialbe:&#34; + id);
+    return id;
+  }
+}
+</code></pre><h3 id="pathvariable-與-requestparam的差別">@PathVariable 與 @RequestParam的差別</h3>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th><code>@PathVariable</code></th>
+<th><code>@RequestParam</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>传参方式</strong></td>
+<td>URL 路径中的参数</td>
+<td>URL 查询参数 (Query Parameter)</td>
+</tr>
+<tr>
+<td><strong>常见请求方法</strong></td>
+<td>主要用于 <code>GET</code>，也可用于 <code>POST</code>, <code>PUT</code>, <code>DELETE</code></td>
+<td>主要用于 <code>GET</code>，也可用于 <code>POST</code></td>
+</tr>
+<tr>
+<td><strong>RESTful 风格</strong></td>
+<td>✅ 非常适合 RESTful API（资源路径标识）</td>
+<td>❌ 一般用于过滤、排序、分页等非资源标识</td>
+</tr>
+<tr>
+<td><strong>参数是否可选</strong></td>
+<td>通常是必须的（因为是路径的一部分）</td>
+<td>支持可选参数和默认值</td>
+</tr>
+<tr>
+<td><strong>请求示例</strong></td>
+<td><code>/user/123</code></td>
+<td><code>/user?id=123&amp;sort=asc</code></td>
+</tr>
+<tr>
+<td><strong>使用场景</strong></td>
+<td>资源标识，例如获取/修改特定 ID 的对象</td>
+<td>过滤、分页、搜索、排序等查询参数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="restful-api">Restful API</h2>
+<p><img src="/images/post/restful-api-1.png" alt="Restful API1"></p>
+<p><img src="/images/post/restful-api-2.png" alt="Restful API2"></p>
+
         </div>
 
         
