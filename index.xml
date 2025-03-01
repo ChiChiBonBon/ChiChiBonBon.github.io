@@ -6,12 +6,12 @@
     <description>Recent content on 邦尼部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 14 Feb 2025 16:14:47 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 01 Mar 2025 16:31:47 +0800</lastBuildDate>
     <atom:link href="https://chichibonbon.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring MVC常用的Annotation</title>
       <link>https://chichibonbon.github.io/blog/spring-mvc/</link>
-      <pubDate>Fri, 14 Feb 2025 16:14:47 +0800</pubDate>
+      <pubDate>Sat, 01 Mar 2025 16:31:47 +0800</pubDate>
       <guid>https://chichibonbon.github.io/blog/spring-mvc/</guid>
       <description>HTTP協議 規定資料傳輸格式，以便前後端可溝通 區分Request和Response兩種 HTTP Request Http Method URL Request Head Request Body HTTP Response Http Status Code Response Head Response Body URL格式 http//localhost:8080/test 協議(http//) 域名(localhost) 埠號(:8080) 路徑(/test) @RequestMapping 用法:加上class或方法上，括號中填寫域名 用途:控制器導路徑，執行對應的方法 要點:使用時一定要加@RestController或@Controller，括號中不包含域名 @RestController @RequestMapping(&amp;#34;/detail&amp;#34;) public class MyController{ @RequestMapping(&amp;#34;/test&amp;#34;) public String test(){ System.</description>
     </item>

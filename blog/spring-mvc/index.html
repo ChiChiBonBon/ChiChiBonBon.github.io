@@ -116,7 +116,7 @@
           <span>By 邦尼</span>
           
           <span class="border-bottom border-primary px-2 mx-1"></span>
-          <span>14 February 2025</span>
+          <span>01 March 2025</span>
           
         </div>
         
@@ -329,6 +329,159 @@ public class MyController{
 <h2 id="restful-api">Restful API</h2>
 <p><img src="/images/post/restful-api-1.png" alt="Restful API1"></p>
 <p><img src="/images/post/restful-api-2.png" alt="Restful API2"></p>
+<ul>
+<li>特點:Get、Delete沒有RequestBody，而Post、Put有RequestBody</li>
+</ul>
+<h2 id="spring-boot參數驗證">Spring Boot參數驗證</h2>
+<p><img src="/images/post/spring-boot-validation-1.png" alt="Sping Boot Validation"></p>
+<p><img src="/images/post/spring-boot-validation-2.png" alt="Sping Boot Validation"></p>
+<p><img src="/images/post/spring-boot-validation-3.png" alt="Sping Boot Validation"></p>
+<p><img src="/images/post/spring-boot-validation-4.png" alt="Sping Boot Validation"></p>
+<p><img src="/images/post/spring-boot-validation-5.png" alt="Sping Boot Validation"></p>
+<h3 id="valid和validated的使用差別">Valid和Validated的使用差別</h3>
+<ol>
+<li>@Valid 适用于 @RequestBody
+@Valid 是 Java Bean Validation（JSR-303/JSR-380 规范）的一部分，通常用于 对象 的验证，适用于 @RequestBody 解析的 JSON 或 XML。</li>
+</ol>
+<p>为什么 @Valid 适用于 @RequestBody？
+@RequestBody 用于接收 JSON 或 XML 并转换成 Java 对象。
+@Valid 会在 对象绑定到 Java Bean 之后 进行验证。
+适用于 DTO（Data Transfer Object），即请求体是 Java 对象。</p>
+<pre tabindex="0"><code>@RestController
+@RequestMapping(&#34;/users&#34;)
+public class UserController {
+
+    @PostMapping(&#34;/create&#34;)
+    public ResponseEntity&lt;String&gt; createUser(@Valid @RequestBody UserDTO userDTO) {
+        return ResponseEntity.ok(&#34;User created successfully!&#34;);
+    }
+}
+</code></pre><p>DTO 类</p>
+<pre tabindex="0"><code>public class UserDTO {
+    
+    @NotNull(message = &#34;Username cannot be null&#34;)
+    @Size(min = 3, message = &#34;Username must be at least 3 characters long&#34;)
+    private String username;
+
+    @Email(message = &#34;Invalid email format&#34;)
+    private String email;
+
+    // Getters and Setters
+}
+</code></pre><p>🔹 这里 @Valid 会确保 UserDTO 中的字段符合约束条件，否则 Spring 会返回 400 Bad Request。</p>
+<ol start="2">
+<li>@Validated 适用于 @RequestParam、@PathVariable、@RequestHeader
+@Validated 是 Spring 提供的增强版校验注解，支持 单个参数 及 分组校验。</li>
+</ol>
+<p>为什么 @Validated 适用于 @RequestParam、@PathVariable、@RequestHeader？
+这些参数通常是 基本数据类型（如 String、Integer） 或 单个值，而不是 Java Bean。
+@Valid 只能用在 Java Bean，不能用于 基本数据类型。
+@Validated 适用于 方法参数级别，包括基本数据类型的校验。</p>
+<pre tabindex="0"><code>@RestController
+@RequestMapping(&#34;/users&#34;)
+@Validated // 需要加在类上，或者方法参数前
+public class UserController {
+
+    @GetMapping(&#34;/{id}&#34;)
+    public ResponseEntity&lt;String&gt; getUser(
+        @PathVariable @Min(value = 1, message = &#34;ID must be greater than 0&#34;) Long id) {
+        return ResponseEntity.ok(&#34;User ID: &#34; + id);
+    }
+
+    @GetMapping(&#34;/search&#34;)
+    public ResponseEntity&lt;String&gt; searchUser(
+        @RequestParam @NotBlank(message = &#34;Query cannot be blank&#34;) String query) {
+        return ResponseEntity.ok(&#34;Search query: &#34; + query);
+    }
+
+    @GetMapping(&#34;/header&#34;)
+    public ResponseEntity&lt;String&gt; checkHeader(
+        @RequestHeader(&#34;X-Request-ID&#34;) @NotBlank(message = &#34;Request ID is required&#34;) String requestId) {
+        return ResponseEntity.ok(&#34;Request ID: &#34; + requestId);
+    }
+}
+</code></pre><p>🔹 这里 @Validated 允许对 路径参数、查询参数、请求头参数 进行校验。</p>
+<ol start="3">
+<li>@Validated 还能支持分组校验
+如果需要 根据不同情况 进行不同的校验，@Validated 提供了 分组校验，这是 @Valid 没有的功能。</li>
+</ol>
+<pre tabindex="0"><code>public class UserDTO {
+
+    public interface Create {}
+    public interface Update {}
+
+    @NotNull(groups = Update.class, message = &#34;ID is required for update&#34;)
+    private Long id;
+
+    @NotNull(groups = Create.class, message = &#34;Username cannot be null&#34;)
+    @Size(min = 3, message = &#34;Username must be at least 3 characters long&#34;)
+    private String username;
+}
+</code></pre><pre tabindex="0"><code>@PostMapping(&#34;/create&#34;)
+public ResponseEntity&lt;String&gt; createUser(@Validated(UserDTO.Create.class) @RequestBody UserDTO userDTO) {
+    return ResponseEntity.ok(&#34;User created!&#34;);
+}
+
+@PutMapping(&#34;/update&#34;)
+public ResponseEntity&lt;String&gt; updateUser(@Validated(UserDTO.Update.class) @RequestBody UserDTO userDTO) {
+    return ResponseEntity.ok(&#34;User updated!&#34;);
+}
+</code></pre><p>🔹 这里 @Validated 允许指定 不同的校验规则组，这样 createUser 和 updateUser 可以使用不同的规则。</p>
+<p>总结
+适用范围	注解	适用情况	作用
+@RequestBody	@Valid	用于 DTO（对象）	触发 Bean Validation
+@RequestParam、@PathVariable、@RequestHeader	@Validated	用于基本数据类型和单个参数	触发参数级别验证
+@RequestBody（支持分组）	@Validated	DTO（对象）	额外支持分组校验
+💡 简单来说：</p>
+<p>@Valid 用于 @RequestBody 解析的 Java Bean 对象。
+@Validated 用于 @RequestParam、@PathVariable、@RequestHeader 这些 单个值 或 基本类型。
+@Validated 还能支持分组校验，@Valid 不能。
+这样就能清楚地知道 @Valid 和 @Validated 的使用区别了！😊</p>
+<h2 id="http狀態碼">HTTP狀態碼</h2>
+<ul>
+<li>用來表示請求回應後的電文狀態為何</li>
+<li>可以根據首字的號碼區隔五大類</li>
+</ul>
+<h3 id="1xx狀態碼">1xx狀態碼</h3>
+<ul>
+<li>資訊類</li>
+</ul>
+<h3 id="2xx狀態碼">2xx狀態碼</h3>
+<ul>
+<li>成功類</li>
+</ul>
+<ol>
+<li>200 OK 請求成功</li>
+<li>201 Created 請求成功且已建立資源，通常用在POST的Response</li>
+<li>202 Accepted 請求已經接受，尚未處理完</li>
+</ol>
+<h3 id="3xx狀態碼">3xx狀態碼</h3>
+<ul>
+<li>重新導向類</li>
+</ul>
+<ol>
+<li>301 Moved Permanently 網址永久性搬家，Response Header中的location要放新的url</li>
+<li>302 found 網址暫時性搬家，Response Header中的location要放新的url</li>
+</ol>
+<h3 id="4xx狀態碼">4xx狀態碼</h3>
+<ul>
+<li>前端錯誤類</li>
+</ul>
+<ol>
+<li>400 Bad Request 前端請求錯誤，如:前後端參數不一致、請求的格式有誤</li>
+<li>401 Unauthorized 沒有通過身份驗證</li>
+<li>403 Forbidden 請求沒後端拒絕</li>
+<li>404 Not Found 網頁不存在，可能資源移走或URL的路徑錯誤</li>
+</ol>
+<h3 id="5xx狀態碼">5xx狀態碼</h3>
+<ul>
+<li>後端錯誤類</li>
+</ul>
+<ol>
+<li>500 Internal Server Error 後端執行程式發生錯誤，可能有bug</li>
+<li>503 Service Unavailable 由於臨時維護或流量太大，後端無法處理請求</li>
+<li>504 Gateway Timeout 請求超時</li>
+</ol>
 
         </div>
 
