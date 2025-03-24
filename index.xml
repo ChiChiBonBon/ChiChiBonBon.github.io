@@ -10,6 +10,13 @@
     <atom:link href="https://chichibonbon.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring MVC常用的Annotation</title>
+      <link>https://chichibonbon.github.io/blog/spring-jdbc/</link>
+      <pubDate>Mon, 03 Mar 2025 16:31:47 +0800</pubDate>
+      <guid>https://chichibonbon.github.io/blog/spring-jdbc/</guid>
+      <description>Spring JDBC CRUD Create對應 Insert sql,Post Method Read對應 Select sql,Get Method Update對應 Update sql,Put Method Delete對應 Delete sql,Delete Method 進階去處理同時間、高流量湧入的問題、加快資料庫查詢效能 在application.</description>
+    </item>
+    <item>
+      <title>Spring MVC常用的Annotation</title>
       <link>https://chichibonbon.github.io/blog/spring-mvc/</link>
       <pubDate>Mon, 03 Mar 2025 16:31:47 +0800</pubDate>
       <guid>https://chichibonbon.github.io/blog/spring-mvc/</guid>

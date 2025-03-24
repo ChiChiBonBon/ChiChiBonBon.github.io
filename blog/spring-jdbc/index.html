@@ -5,7 +5,7 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="邦尼的技術學習手札">
+  <meta name="description" content="如何使用Java Annotation">
   <meta name="author" content="邦尼">
     
   
@@ -103,101 +103,70 @@
 </header>
 <!-- /navigation -->
 
-
 <section class="section-sm">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 mb-5 mb-lg-0">
-        <div class="row">
-          
-          <div class="col-lg-4">
-  <div class="widgets">
-    
-    <div class="widget">
-      
-      <h4 class="widget-title">About Me</h4>
-      
-      <img src="https://chichibonbon.github.io/images/benny.jpg" alt=""
-        class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
-      
-      <p>我是Benny Chang（邦尼），畢業於北科大工管系，曾在農金資訊擔任程式開發人員，目前是自由工作者。 這是我的技術部落格，主要用來做技術筆記幫助記憶，跟我一起來學習成長💪</p>
-      <a href="https://chichibonbon.github.io/about/" class="btn btn-outline-primary">Know More</a>
-      
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Category</h4>
-      <ul class="list-unstyled">
-        <li><a
-            href="/categories/%e5%ad%b8%e7%bf%92%e6%8a%80%e5%b7%a7/">學習技巧</a>
-        </li>
-        <li><a
-            href="/categories/%e6%8a%80%e8%a1%93%e6%9c%ad%e8%a8%98/">技術札記</a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Tag</h4>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/docker/">Docker</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/java/">Java</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/markdown/">Markdown</a></li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Social</h4>
-      <ul class="list-inline social-links">
-        
-        <li class="list-inline-item"><a href="https://github.com/ChiChiBonBon"><i class="ti-github"></i></a></li>
-        
-      </ul>
-    </div>
-  </div>
-</div>
-
-          
-          
-          
-          <div class="col-md-6 mb-4">
-    <article class="card">
-        
-        <img src="https://chichibonbon.github.io/images/post/article-pic-docker.webp" class="card-img-top" alt="docker學習記">
-        
-        <div class="card-body px-0">
+      <div class="col-lg-10 mx-auto">
         
         <a href="/categories/%e6%8a%80%e8%a1%93%e6%9c%ad%e8%a8%98"
-            class="text-primary">技術札記</a>
+          class="text-primary">技術札記</a>
         
-        <a href="https://chichibonbon.github.io/blog/docker-start/" class="h5 d-block my-3">docker學習記</a>
+        <h2>Spring MVC常用的Annotation</h2>
         <div class="mb-3 post-meta">
-            <span>By 邦尼</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            <span>2024-01-15</span>
-            
-        </div>
-        <p class="card-text">如何使用docker</p>
-        <a href="https://chichibonbon.github.io/blog/docker-start/" class="btn btn-outline-primary">read more</a>
-        </div>
-    </article>
-</div>
+          <span>By 邦尼</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>03 March 2025</span>
           
         </div>
-      </div>
-
-      
-      <div class="col-12 mt-5">
         
+        <img src="https://chichibonbon.github.io/images/post/article-spring-boot-pic.png" class="img-fluid w-100 mb-4" alt="Spring MVC常用的Annotation">
+        
+        <div class="content mb-5">
+          <h2 id="spring-jdbc">Spring JDBC</h2>
+<h3 id="crud">CRUD</h3>
+<ul>
+<li>Create對應 Insert sql,Post Method</li>
+<li>Read對應 Select sql,Get Method</li>
+<li>Update對應 Update sql,Put Method</li>
+<li>Delete對應 Delete sql,Delete Method</li>
+<li>進階去處理同時間、高流量湧入的問題、加快資料庫查詢效能</li>
+</ul>
+<h3 id="在applicationproperties-資料庫遲線設定">在application.properties 資料庫遲線設定</h3>
+<ol>
+<li>指定要使用哪個資料庫的 driver: spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</li>
+<li>指定要連線到哪個資料庫上: spring.datasource.url=jdbc:mysql://localhost:3306/myjdbc?serverTimezone=Asia/Taipei&amp;&amp;characterEncoding=utf-8</li>
+<li>帳號: spring.datasource.username=root</li>
+<li>密碼: spring.datasource.password=springboot</li>
+</ol>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "chichibonbon" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       </div>
     </div>
   </div>
 </section>
-
 
 
 
